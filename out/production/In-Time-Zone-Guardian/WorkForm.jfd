@@ -1,0 +1,72 @@
+JFDML JFormDesigner: "8.0.3.0.246" Java: "17.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 200, 100 )
+			"resizable": false
+			"iconImage": new com.jformdesigner.model.SwingIcon( 1, "C:\\work\\327\\In-Time-Zone-Guardian\\withfanta-java\\In-Time-Zone-Guardian\\asset\\WorkFormPic.jpg" )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				"background": new java.awt.Color( 102, 255, 0, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+					"columns": 1
+					"rows": 2
+				} ) {
+					name: "panel1"
+					"background": new java.awt.Color( 102, 255, 0, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "   您正在工作，请加油！"
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+						"foreground": sfield java.awt.Color white
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+						name: "panel2"
+						"background": new java.awt.Color( 102, 255, 0, 255 )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label3"
+							"text": "还剩下"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 8, false )
+							"foreground": sfield java.awt.Color white
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "MinLabel"
+							"text": "0"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 8, false )
+							"foreground": sfield java.awt.Color white
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label5"
+							"text": "分"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 8, false )
+							"foreground": sfield java.awt.Color white
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "SecondLabel"
+							"text": "0"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 8, false )
+							"foreground": sfield java.awt.Color white
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label7"
+							"text": "秒"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 8, false )
+							"foreground": sfield java.awt.Color white
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 10 )
+			"size": new java.awt.Dimension( 415, 300 )
+		} )
+	}
+}

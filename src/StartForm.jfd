@@ -1,0 +1,140 @@
+JFDML JFormDesigner: "8.0.3.0.246" Java: "17.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"title": "TimeZone"
+			"iconImage": new com.jformdesigner.model.SwingIcon( 1, "C:\\work\\327\\In-Time-Zone-Guardian\\In-Time-Zone-Guardian\\asset\\R-C.jpg" )
+			"preferredSize": new java.awt.Dimension( 280, 350 )
+			"resizable": false
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				"preferredSize": new java.awt.Dimension( 280, 350 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+					"columns": 1
+					"rows": 7
+				} ) {
+					name: "MainPanel"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignment": 0
+					} ) {
+						name: "TimePanel"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "TimeLabel"
+							"text": "计时器："
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignment": 0
+					} ) {
+						name: "WorkPanel"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "WorkLabel1"
+							"text": "工作时间："
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "WorkSpinner"
+							"model": new javax.swing.SpinnerNumberModel {
+								value: 30
+							}
+							"minimumSize": new java.awt.Dimension( 80, 30 )
+							"preferredSize": new java.awt.Dimension( 60, 30 )
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "WorkSpinnerStateChanged", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "WorkLabel2"
+							"text": "（分钟）"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignment": 0
+					} ) {
+						name: "RestPanel"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "RestLabel1"
+							"text": "休息时间："
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+						} )
+						add( new FormComponent( "javax.swing.JSpinner" ) {
+							name: "RestSpinner"
+							"minimumSize": new java.awt.Dimension( 80, 30 )
+							"preferredSize": new java.awt.Dimension( 60, 30 )
+							"model": new javax.swing.SpinnerNumberModel {
+								minimum: 1
+								value: 5
+							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "RestLabel2"
+							"text": "（分钟）"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "CheckLabel"
+						"text": "选项："
+						"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignment": 0
+					} ) {
+						name: "ShieldPanel"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "space"
+							"text": "     "
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "ShieldCheckBox"
+							"text": "休息时屏蔽键盘和鼠标"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+							"selected": true
+							"background": new java.awt.Color( 60, 63, 65, 142 )
+							"opaque": false
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignment": 0
+					} ) {
+						name: "StrongPanel"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label10"
+							"text": "     "
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "StrongCheckBox"
+							"text": "强力模式（慎用）"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 3, false )
+							"opaque": false
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+						name: "panel4"
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "StartButton"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+							"foreground": new java.awt.Color( 51, 255, 51, 255 )
+							"selectedIcon": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							"icon": new com.jformdesigner.model.SwingIcon( 1, "C:\\work\\327\\In-Time-Zone-Guardian\\withfanta-java\\In-Time-Zone-Guardian\\asset\\Start.png" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "Start", true ) )
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 335, 110 )
+			"size": new java.awt.Dimension( 400, 410 )
+		} )
+	}
+}

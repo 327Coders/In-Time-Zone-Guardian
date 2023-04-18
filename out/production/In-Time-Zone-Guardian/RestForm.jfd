@@ -1,0 +1,91 @@
+JFDML JFormDesigner: "8.0.3.0.246" Java: "17.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 1920, 1080 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				"background": new java.awt.Color( 60, 63, 65, 0 )
+				"preferredSize": new java.awt.Dimension( 1920, 1080 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+					"columns": 1
+					"rows": 2
+				} ) {
+					name: "panel5"
+					"background": new java.awt.Color( 255, 0, 49, 255 )
+					"preferredSize": new java.awt.Dimension( 1920, 154 )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"vgap": 400
+					} ) {
+						name: "panel7"
+						"background": new java.awt.Color( 255, 51, 51, 255 )
+						"preferredSize": new java.awt.Dimension( 1920, 77 )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label10"
+							"text": " 您已经久坐"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label11"
+							"text": "text"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label12"
+							"text": "分钟了，站起来休息一下吧！"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+						name: "panel8"
+						"background": new java.awt.Color( 204, 0, 51, 255 )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label13"
+							"text": "还剩"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "MinLabel"
+							"text": "0"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label15"
+							"text": "分"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "SecondLabel"
+							"text": "0"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label17"
+							"text": "秒"
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 40, false )
+							"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 1125, 635 )
+		} )
+	}
+}
