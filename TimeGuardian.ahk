@@ -41,6 +41,7 @@ workTime := ""
 restTime := ""
 Saved := ""
 status := 1
+drag := 0
 time := ""
 daojishi := ""
 ProcessUserInput(*)
@@ -64,13 +65,10 @@ ProcessUserInput(*)
 
 !c::ProcessClose(guititle ".exe")
 !b::{
-    global time,Main,status,workTime,restTime
-
+    global time
     if(status == 1)
-        ; work()
         time := workTime + 1
     else
-        ; rest()
         time := restTime + 1
 
     Sleep 1100
@@ -80,50 +78,56 @@ ProcessUserInput(*)
 
 
 work(){
-    global workTime,status,daojishi,Main
+    global status,daojishi,Main,drag
+    drag := 1
+    tipGui("cffffff s17 w30", "w100 h30 Center yp+15 xp+20", "注意坐姿")
+    daojishi := Main.Add("Text", "w80 h30 Center yp+30 xp+27", Format("{:02}", Round(workTime / 60)) ":" Format("{:02}", 0))
+    Main.Show("W123 H40 X" A_ScreenWidth * 0.92 " Y" A_ScreenHeight * 0.87)
 
-    tipGui("cffffff s20 w100", "w250 h45 Center yp+15", "注意坐姿")
-    daojishi := Main.Add("Text", "w250 h40 Center yp+50 xp+30", Format("{:02}", Round(workTime / 60)) ":" Format("{:02}", 0))
-    Main.Show("W250 H120 X" SysGet(78) * 0.88 " Y" SysGet(79) * 0.82)
+    WinSetStyle "-0xC00000", guititle
+
     BlockInput "Off"
+    WinSetTransparent 200, guititle
     timeRest()
     status := 0
+    
 }
 
 
 rest(){
-    global restTime,status,daojishi,Main,guititle
-
+    global status,daojishi,Main,drag
+    drag := 0
     tipGui("cFFFFFF s30 w100", "w" SysGet(78) " Center ym" SysGet(79) / 2 - 100 " " "h100", "您已工作" Round(restTime / 60) "分钟，请站起来活动一下吧！")
     daojishi := Main.Add("Text", "w" SysGet(78) " Center h100", Format("{:02}", Round(restTime / 60)) ":" Format("{:02}", 0))
-    Main.Show("X0 Y0 W" SysGet(78) " H" SysGet(79))
+    Main.Show("W" A_ScreenWidth " H" A_ScreenHeight)
+
     BlockInput "On"
-
     WinSetTransparent 180, guititle
-
     timeRest()
     status := 1
 }
 
 
 tipGui(fontFormat, textOption, tipText){
-    global guititle,Main
-    Main := Gui("AlwaysOnTop -DPIScale -SysMenu" ,guititle)
+    global Main
+    Main := Gui("AlwaysOnTop -SysMenu ToolWindow")
     Main.MenuBar := ""
     Main.MarginX := 0
     Main.SetFont(fontFormat)
     Main.BackColor := "066c06"
     Main.Add("Text", textOption, tipText)
+
+
 }
 
 timeRest(){
     global status,workTime,restTime,time,Main
 
     if(status == 1){
-        time := workTime + 1
+        time := workTime
     }
     else{
-        time := restTime + 1
+        time := restTime
     }
     SetTimer xianshi, 1000
     while(time){
@@ -144,4 +148,25 @@ xianshi(){
     }
     
 }
+
+OnMessage 0x201, down
+down(wParam, lParam, msg, hwnd)
+{ 
+    if(drag){
+        global guititle
+        MouseGetPos &mouseX, &mouseY
+        Loop
+        {
+            WinGetPos &startX, &startY, , , guititle
+            state := GetKeyState("LButton")
+            if state == 0
+                break
+            MouseGetPos &mouseNewX, &mouseNewY
+            WinMove startX + mouseNewX - mouseX, startY + mouseNewY - mouseY, , ,guititle
+        }
+    }
+}
+
+
+
     
